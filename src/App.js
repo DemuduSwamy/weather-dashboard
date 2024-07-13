@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
+import { fetchWeatherData } from "./api/OpenWeatherService";
 import AirConditions from "./components/airConditions";
 import CurrentWeatherItem from "./components/currentWeatherItem";
 import SearchBar from "./components/searchBox";
 import TodayForcastList from "./components/todayForcastList";
 import WeeklyForcastList from "./components/weeklyForcastList";
-import { fetchWeatherData } from "./api/OpenWeatherService";
+import { ALL_DESCRIPTIONS } from "./utilities/DateConstants";
+import { transformDateFormat } from "./utilities/DatetimeUtils";
 import {
   getTodayForecastWeather,
   getWeekForecastWeather,
 } from "./utilities/dataUtils";
-import { ALL_DESCRIPTIONS } from "./utilities/DateConstants";
-import { transformDateFormat } from "./utilities/DatetimeUtils";
 
 function App() {
   const [todayWeather, setTodayWeather] = useState(null);
@@ -58,14 +58,21 @@ function App() {
   console.log("todayForecast_001", JSON.stringify(todayForecast));
 
   return (
-    <div className="bg-primary  flex  flex-col px-40 py-5">
-      <div className="bg-secondary p-8 shadow-2xl rounded-lg  flex flex-col gap-5">
-        <p className="font-bold text-[25px]">WEATHER FORCASTING</p>
+    <div className="bg-gradient-to-b from-[#0076A4] to-[#96C3D4] flex flex-col px-40 py-10 h-screen justify-center items-center">
+      <div className="bg-gradient-to-l from-[#87CEFA] to-[#E0FFFF] p-8 shadow-2xl rounded-lg  flex flex-col gap-5 w-fit">
+        <div className="flex gap-1">
+          <p className="font-bold text-[30px] text-heading border-b-4 border-b-content">
+            WEATHER
+          </p>
+          <p className="font-bold text-[30px] text-content border-b-4 border-b-heading">
+            FORCASTING
+          </p>
+        </div>
         <div>
           <SearchBar onSearchChange={handleSearchChange} />
         </div>
-        <div className="flex justify-between pt-5">
-          <div className="flex flex-col gap-10">
+        <div className="flex gap-36 pt-5">
+          <div className="flex flex-col gap-8">
             {todayWeather && (
               <>
                 <CurrentWeatherItem

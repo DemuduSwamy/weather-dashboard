@@ -3,9 +3,9 @@ import WeeklyForecastItem from "./weeklyForcastItem";
 
 const AirConditions = ({ realFeel, wind, cloud, humidity }) => {
   return (
-    <div className="flex flex-col items-center justify-center text-wra w-fit p-4">
-      <p className="font-bold text-[20px] mb-5">AIR CONDITIONS</p>
-      <div className="flex gap-20">
+    <div className="flex flex-col text-wrap w-fit p-4">
+      <p className="font-bold text-[20px] mb-5 text-heading">AIR CONDITIONS</p>
+      <div className="flex space-x-20">
         <div className="flex flex-col justify-center items-center">
           <WeeklyForecastItem value="Real Feel" type="temperature" />
           <p className="mt-4">{realFeel}°C</p>

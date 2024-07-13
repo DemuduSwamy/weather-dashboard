@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import { AutoComplete, Input, Select } from "antd";
+import React, { useState } from "react";
 import { fetchCities } from "../api/OpenWeatherService";
 
 const { Option } = Select;
