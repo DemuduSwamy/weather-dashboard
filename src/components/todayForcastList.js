@@ -1,22 +1,19 @@
 import React from "react";
-import TodayForcastItem from "./todayForcastItem";
+import TodayForecastItem from "./todayForcastItem";
+import { weatherIcon } from "../utilities/IconsUtils";
 
-const TodayForcastList = () => {
-  const gridData = [
-    { title: "Card 1", content: "Content 1" },
-    { title: "Card 2", content: "Content 2" },
-    { title: "Card 3", content: "Content 3" },
-    { title: "Card 1", content: "Content 1" },
-    { title: "Card 2", content: "Content 2" },
-    { title: "Card 3", content: "Content 3" },
-  ];
+const TodayForcastList = ({ todayForcast }) => {
   return (
     <div className="flex flex-col items-center justify-center text-wra w-fit p-4">
       <p className="font-bold text-[20px] mb-5">TODAY'S FORECAST</p>
       <div className="flex gap-2">
-        {gridData.map((item, index) => (
+        {todayForcast.map((item, index) => (
           <div key={index}>
-            <TodayForcastItem />
+            <TodayForecastItem
+              title={item.time}
+              imageUrl={weatherIcon(`${item.icon}.png`)}
+              description={item.temperature}
+            />
           </div>
         ))}
       </div>

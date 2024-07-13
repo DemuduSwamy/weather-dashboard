@@ -20,7 +20,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const handleSearchChange = (enteredData) => {
-    console.log("Selected city data: ", enteredData);
     searchHAndler({ enteredData });
   };
 
@@ -55,33 +54,45 @@ function App() {
     }
   };
 
-  const weeklyData = [
-    { title: "Card 1", content: "Content 1" },
-    { title: "Card 2", content: "Content 2" },
-    { title: "Card 3", content: "Content 3" },
-    { title: "Card 1", content: "Content 1" },
-    { title: "Card 2", content: "Content 2" },
-    { title: "Card 3", content: "Content 3" },
-  ];
+  console.log("todayWeather_001", JSON.stringify(todayWeather));
+  console.log("todayForecast_001", JSON.stringify(todayForecast));
 
   return (
-    <div className="bg-[#5C9CE5]  flex  flex-col px-40 py-5">
-      <div className="bg-[#E4f1ff] p-8 shadow-2xl rounded-lg  flex flex-col gap-5">
+    <div className="bg-primary  flex  flex-col px-40 py-5">
+      <div className="bg-secondary p-8 shadow-2xl rounded-lg  flex flex-col gap-5">
         <p className="font-bold text-[25px]">WEATHER FORCASTING</p>
         <div>
           <SearchBar onSearchChange={handleSearchChange} />
         </div>
         <div className="flex justify-between pt-5">
           <div className="flex flex-col gap-10">
-            <CurrentWeatherItem />
-            <AirConditions />
-            <TodayForcastList />
+            {todayWeather && (
+              <>
+                <CurrentWeatherItem
+                  city={todayWeather.city}
+                  date={"Today"}
+                  description={todayWeather.weather[0].description}
+                  temperature={todayWeather.main.temp}
+                  icon={`${todayWeather.weather[0].icon}.png`}
+                />
+                <AirConditions
+                  realFeel={todayWeather.main.feels_like}
+                  humidity={todayWeather.main.humidity}
+                  cloud={todayWeather.clouds.all}
+                  wind={todayWeather.wind.speed}
+                />
+              </>
+            )}
+
+            {todayForecast && <TodayForcastList todayForcast={todayForecast} />}
           </div>
-          <div className="flex-col flex gap-2">
-            {weeklyData.map((item, index) => (
-              <WeeklyForcastList />
-            ))}
-          </div>
+          {weekForecast && (
+            <div className="flex-col flex gap-2">
+              {weekForecast.list.map((item, index) => (
+                <WeeklyForcastList weatherData={item} index={index} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

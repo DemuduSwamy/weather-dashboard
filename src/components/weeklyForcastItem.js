@@ -17,7 +17,7 @@ const WeeklyForecastItem = ({ value, type }) => {
     iconContent = <WiHumidity style={{ fontSize: "18px" }} />;
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-start">
       {iconContent}
       <p className="text-sm sm:text-base font-semibold">{value}</p>
     </div>
