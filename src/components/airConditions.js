@@ -11,7 +11,7 @@ const AirConditions = ({ realFeel, wind, cloud, humidity }) => {
 
   return (
     <div className="flex flex-col text-wrap w-fit pl-5">
-      <p className="font-bold text-[20px] mb-5 text-heading">AIR CONDITIONS</p>
+      <p className="font-bold text-[18px] mb-3 text-heading">AIR CONDITIONS</p>
       <div className="flex gap-8">
         {conditions.map((condition, index) => (
           <div key={index} className="flex flex-col  items-center">

@@ -37,9 +37,9 @@ const WeeklyForcastList = ({ weatherData, index }) => {
   ];
 
   return (
-    <div className="flex justify-between items-center shadow-xl rounded-lg bg-white p-3 gap-20">
+    <div className="flex justify-between items-center shadow-xl rounded-lg bg-white p-3 gap-24">
       {conditions.map((group, groupIndex) => (
-        <div key={groupIndex} className="flex flex-col items-center gap-1">
+        <div key={groupIndex} className="flex flex-col gap-2">
           {group.map((condition, conditionIndex) => (
             <WeeklyForecastItem
               key={conditionIndex}

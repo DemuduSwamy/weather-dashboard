@@ -65,11 +65,9 @@ function App() {
             FORCASTING
           </p>
         </div>
-        <div>
-          <SearchBar onSearchChange={handleSearchChange} />
-        </div>
-        <div className="flex gap-32 pt-3">
-          <div className="flex flex-col gap-3">
+        <div className="flex gap-44 ">
+          <div className="flex flex-col gap-7">
+            <SearchBar onSearchChange={handleSearchChange} />
             {todayWeather && (
               <>
                 <CurrentWeatherItem
@@ -91,13 +89,18 @@ function App() {
               </>
             )}
           </div>
-          {weekForecast && (
-            <div>
-              {weekForecast.list.map((item, index) => (
-                <WeeklyForcastList weatherData={item} index={index} />
-              ))}
-            </div>
-          )}
+          <div>
+            {weekForecast && (
+              <div>
+                <p className="font-bold text-[18px] mb-3 text-heading">
+                  WEEKLY FORECAST
+                </p>
+                {weekForecast.list.map((item, index) => (
+                  <WeeklyForcastList weatherData={item} index={index} />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

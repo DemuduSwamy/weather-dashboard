@@ -48,7 +48,7 @@ const SearchBar = ({ onSearchChange }) => {
       onSelect={onSelectHandler}
       value={searchValue}
       onChange={(value) => setSearchValue(value)}
-      className="w-full text-[50px]"
+      className="w-[full] text-[50px]"
     >
       {/* <Input placeholder="Search..." className="custom-input" /> */}
       <Input size="large" placeholder="Enter city name..." enterButton />
