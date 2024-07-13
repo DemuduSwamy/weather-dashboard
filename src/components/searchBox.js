@@ -1,8 +1,7 @@
-import { AutoComplete, Input, Select } from "antd";
+import { AutoComplete, Input } from "antd";
 import React, { useState } from "react";
-import { fetchCities } from "../api/OpenWeatherService";
 
-const { Option } = Select;
+import { fetchCities } from "../api/OpenWeatherService";
 
 const SearchBar = ({ onSearchChange }) => {
   const [options, setOptions] = useState([]);
@@ -31,6 +30,7 @@ const SearchBar = ({ onSearchChange }) => {
       setOptions([]);
     }
   };
+
   const onSearchHandler = (inputValue) => {
     setSearchValue(inputValue);
     loadOptions(inputValue);
@@ -41,10 +41,6 @@ const SearchBar = ({ onSearchChange }) => {
     onSearchChange(option);
   };
 
-  const onDropdownClick = () => {
-    loadOptions(searchValue);
-  };
-
   return (
     <AutoComplete
       options={options}
@@ -53,25 +49,9 @@ const SearchBar = ({ onSearchChange }) => {
       value={searchValue}
       onChange={(value) => setSearchValue(value)}
       className="w-full text-[50px]"
-      optionPadding="12px"
     >
-      <Input
-        placeholder="Search..."
-        suffix={
-          <Select
-            defaultValue="Option1"
-            className="select-dropdown"
-            onClick={onDropdownClick}
-          >
-            {options.map((option) => (
-              <Option key={option.value} value={option.value}>
-                {option.label}
-              </Option>
-            ))}
-          </Select>
-        }
-        className="custom-input"
-      />
+      {/* <Input placeholder="Search..." className="custom-input" /> */}
+      <Input.Search size="large" placeholder="Enter city name..." enterButton />
     </AutoComplete>
   );
 };

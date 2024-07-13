@@ -54,9 +54,6 @@ function App() {
     }
   };
 
-  console.log("todayWeather_001", JSON.stringify(todayWeather));
-  console.log("todayForecast_001", JSON.stringify(todayForecast));
-
   return (
     <div className="bg-gradient-to-b from-[#0076A4] to-[#96C3D4] flex flex-col px-40 py-10 h-screen justify-center items-center">
       <div className="bg-gradient-to-l from-[#87CEFA] to-[#E0FFFF] p-8 shadow-2xl rounded-lg  flex flex-col gap-5 w-fit">
@@ -88,10 +85,11 @@ function App() {
                   cloud={todayWeather.clouds.all}
                   wind={todayWeather.wind.speed}
                 />
+                {todayForecast && (
+                  <TodayForcastList todayForcast={todayForecast} />
+                )}
               </>
             )}
-
-            {todayForecast && <TodayForcastList todayForcast={todayForecast} />}
           </div>
           {weekForecast && (
             <div className="flex-col flex gap-2">
