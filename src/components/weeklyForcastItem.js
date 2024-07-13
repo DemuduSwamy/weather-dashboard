@@ -6,16 +6,11 @@ import { WiHumidity, WiThermometer } from "react-icons/wi";
 const WeeklyForecastItem = ({ value, type }) => {
   let iconContent;
 
-  if (type === "temperature")
-    iconContent = <WiThermometer irs style={{ fontSize: "18px" }} />;
-  else if (type === "wind")
-    iconContent = <FiWind style={{ fontSize: "18px" }} />;
+  if (type === "temperature") iconContent = <WiThermometer size={22} />;
+  else if (type === "wind") iconContent = <FiWind size={20} />;
   else if (type === "clouds")
-    iconContent = (
-      <MdOutlineCloudQueue style={{ fontSize: "18px" }} color="black" />
-    );
-  else if (type === "humidity")
-    iconContent = <WiHumidity style={{ fontSize: "18px" }} />;
+    iconContent = <MdOutlineCloudQueue color="black" size={20} />;
+  else if (type === "humidity") iconContent = <WiHumidity size={22} />;
 
   return (
     <div className="flex items-center gap-1">

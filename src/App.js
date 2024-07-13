@@ -57,13 +57,16 @@ function App() {
   return (
     <div className="bg-gradient-to-b from-[#03264E] to-[#0076A4] flex flex-col w-full h-screen py-10 justify-center items-center">
       <div className="bg-gradient-to-l from-[#87CEFA] to-[#E0FFFF] p-5 shadow-2xl rounded-lg  flex flex-col gap-5 w-fit">
-        <div className="flex gap-1">
-          <p className="font-bold text-[26px] text-heading border-b-4 border-b-content">
-            WEATHER
-          </p>
-          <p className="font-bold text-[26px] text-content border-b-4 border-b-heading">
-            FORCASTING
-          </p>
+        <div className="flex flex-col gap-1">
+          <div className="flex gap-1">
+            <p className="font-bold text-[26px] text-heading border-b-4 border-b-content">
+              WEATHER
+            </p>
+            <p className="font-bold text-[26px] text-content border-b-4 border-b-heading">
+              FORCASTING
+            </p>
+          </div>
+          <p>Know your weather, plan your day.</p>
         </div>
         <div className="flex gap-44 ">
           <div className="flex flex-col gap-7">

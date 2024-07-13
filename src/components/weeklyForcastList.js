@@ -11,7 +11,7 @@ const WeeklyForcastList = ({ weatherData, index }) => {
       { value: forecastDays[index], type: "date" },
       {
         value: (
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center  gap-2">
             <Image
               width={32}
               src={weatherIcon(weatherData.icon)}

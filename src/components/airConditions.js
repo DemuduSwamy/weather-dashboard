@@ -14,9 +14,11 @@ const AirConditions = ({ realFeel, wind, cloud, humidity }) => {
       <p className="font-bold text-[18px] mb-3 text-heading">AIR CONDITIONS</p>
       <div className="flex gap-8">
         {conditions.map((condition, index) => (
-          <div key={index} className="flex flex-col  items-center">
+          <div key={index} className="flex flex-col items-center">
             <WeeklyForecastItem value={condition.value} type={condition.type} />
-            <p className="mt-4 text-heading font-semibold">{condition.data}</p>
+            <p className="mt-3 ml-3 text-heading font-semibold">
+              {condition.data}
+            </p>
           </div>
         ))}
       </div>
