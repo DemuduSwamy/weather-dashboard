@@ -1,18 +1,19 @@
 import React from "react";
-import { CiFilter } from "react-icons/ci";
-import { FaThermometerEmpty } from "react-icons/fa";
-import { FaStairs } from "react-icons/fa6";
-import { WiHumidity } from "react-icons/wi";
+import { FiWind } from "react-icons/fi";
+import { MdOutlineCloudQueue } from "react-icons/md";
+import { WiHumidity, WiThermometer } from "react-icons/wi";
 
 const WeeklyForecastItem = ({ value, type }) => {
   let iconContent;
 
   if (type === "temperature")
-    iconContent = <FaStairs style={{ fontSize: "18px" }} />;
+    iconContent = <WiThermometer irs style={{ fontSize: "18px" }} />;
   else if (type === "wind")
-    iconContent = <FaThermometerEmpty style={{ fontSize: "18px" }} />;
+    iconContent = <FiWind style={{ fontSize: "18px" }} />;
   else if (type === "clouds")
-    iconContent = <CiFilter style={{ fontSize: "18px" }} color="black" />;
+    iconContent = (
+      <MdOutlineCloudQueue style={{ fontSize: "18px" }} color="black" />
+    );
   else if (type === "humidity")
     iconContent = <WiHumidity style={{ fontSize: "18px" }} />;
 

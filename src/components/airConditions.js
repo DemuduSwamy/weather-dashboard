@@ -5,7 +5,7 @@ const AirConditions = ({ realFeel, wind, cloud, humidity }) => {
   const conditions = [
     { value: "Real Feel", type: "temperature", data: `${realFeel}°C` },
     { value: "Wind", type: "wind", data: `${wind}m/s` },
-    { value: "Clouds", type: "cloud", data: `${cloud}%` },
+    { value: "Clouds", type: "clouds", data: `${cloud}%` },
     { value: "Humidity", type: "humidity", data: `${humidity}%` },
   ];
 

@@ -51,7 +51,7 @@ const SearchBar = ({ onSearchChange }) => {
       className="w-full text-[50px]"
     >
       {/* <Input placeholder="Search..." className="custom-input" /> */}
-      <Input.Search size="large" placeholder="Enter city name..." enterButton />
+      <Input size="large" placeholder="Enter city name..." enterButton />
     </AutoComplete>
   );
 };
