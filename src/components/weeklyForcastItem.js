@@ -12,14 +12,14 @@ const WeeklyForecastItem = ({ value, type }) => {
   else if (type === "wind")
     iconContent = <FaThermometerEmpty style={{ fontSize: "18px" }} />;
   else if (type === "clouds")
-    iconContent = <CiFilter style={{ fontSize: "18px" }} />;
+    iconContent = <CiFilter style={{ fontSize: "18px" }} color="black" />;
   else if (type === "humidity")
     iconContent = <WiHumidity style={{ fontSize: "18px" }} />;
 
   return (
-    <div className="flex items-center justify-start">
+    <div className="flex items-center gap-1">
       {iconContent}
-      <p className="text-sm sm:text-base font-semibold">{value}</p>
+      <p className="font-semibold text-heading">{value}</p>
     </div>
   );
 };

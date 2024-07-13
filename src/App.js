@@ -55,21 +55,21 @@ function App() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-[#0076A4] to-[#96C3D4] flex flex-col px-40 py-10 h-screen justify-center items-center">
-      <div className="bg-gradient-to-l from-[#87CEFA] to-[#E0FFFF] p-8 shadow-2xl rounded-lg  flex flex-col gap-5 w-fit">
+    <div className="bg-gradient-to-b from-[#03264E] to-[#0076A4] flex flex-col w-full h-screen py-10 justify-center items-center">
+      <div className="bg-gradient-to-l from-[#87CEFA] to-[#E0FFFF] p-5 shadow-2xl rounded-lg  flex flex-col gap-5 w-fit">
         <div className="flex gap-1">
-          <p className="font-bold text-[30px] text-heading border-b-4 border-b-content">
+          <p className="font-bold text-[26px] text-heading border-b-4 border-b-content">
             WEATHER
           </p>
-          <p className="font-bold text-[30px] text-content border-b-4 border-b-heading">
+          <p className="font-bold text-[26px] text-content border-b-4 border-b-heading">
             FORCASTING
           </p>
         </div>
         <div>
           <SearchBar onSearchChange={handleSearchChange} />
         </div>
-        <div className="flex gap-36 pt-5">
-          <div className="flex flex-col gap-8">
+        <div className="flex gap-32 pt-3">
+          <div className="flex flex-col gap-3">
             {todayWeather && (
               <>
                 <CurrentWeatherItem
@@ -92,7 +92,7 @@ function App() {
             )}
           </div>
           {weekForecast && (
-            <div className="flex-col flex gap-2">
+            <div>
               {weekForecast.list.map((item, index) => (
                 <WeeklyForcastList weatherData={item} index={index} />
               ))}

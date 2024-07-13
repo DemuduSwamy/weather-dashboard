@@ -4,11 +4,11 @@ import TodayForecastItem from "./todayForcastItem";
 
 const TodayForcastList = ({ todayForcast }) => {
   return (
-    <div className="flex flex-col items-center justify-center text-wra w-fit p-4">
-      <p className="font-bold text-[20px] mb-5 text-heading">
+    <div className="flex flex-col text-wrap w-fit p-4">
+      <p className="font-bold text-[18px] mb-3 text-heading">
         TODAY'S FORECAST
       </p>
-      <div className="flex gap-2">
+      <div className="flex gap-5">
         {todayForcast.map((item, index) => (
           <div key={index}>
             <TodayForecastItem

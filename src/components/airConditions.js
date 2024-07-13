@@ -10,16 +10,13 @@ const AirConditions = ({ realFeel, wind, cloud, humidity }) => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center text-wra w-fit p-4">
-      <p className="font-bold text-[20px] mb-5">AIR CONDITIONS</p>
-      <div className="flex gap-20">
+    <div className="flex flex-col text-wrap w-fit pl-5">
+      <p className="font-bold text-[20px] mb-5 text-heading">AIR CONDITIONS</p>
+      <div className="flex gap-8">
         {conditions.map((condition, index) => (
-          <div
-            key={index}
-            className="flex flex-col justify-center items-center"
-          >
+          <div key={index} className="flex flex-col  items-center">
             <WeeklyForecastItem value={condition.value} type={condition.type} />
-            <p className="mt-4">{condition.data}</p>
+            <p className="mt-4 text-heading font-semibold">{condition.data}</p>
           </div>
         ))}
       </div>

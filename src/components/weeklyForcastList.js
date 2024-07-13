@@ -1,8 +1,8 @@
-import React from "react";
-import WeeklyForecastItem from "./weeklyForcastItem";
 import { Image } from "antd";
-import { weatherIcon } from "../utilities/IconsUtils";
+import React from "react";
 import { getWeekDays } from "../utilities/DatetimeUtils";
+import { weatherIcon } from "../utilities/IconsUtils";
+import WeeklyForecastItem from "./weeklyForcastItem";
 
 const WeeklyForcastList = ({ weatherData, index }) => {
   const forecastDays = getWeekDays();
@@ -16,7 +16,7 @@ const WeeklyForcastList = ({ weatherData, index }) => {
               width={32}
               src={weatherIcon(weatherData.icon)}
               alt={"title"}
-              style={{ filter: "invert(0%) brightness(0%)" }}
+              preview={false}
             />
             <p className="text-sm sm:text-base font-semibold">
               {weatherData.description}
@@ -37,9 +37,9 @@ const WeeklyForcastList = ({ weatherData, index }) => {
   ];
 
   return (
-    <div className="flex justify-between items-center shadow-xl rounded-lg bg-white p-4 gap-20">
+    <div className="flex justify-between items-center shadow-xl rounded-lg bg-white p-3 gap-20">
       {conditions.map((group, groupIndex) => (
-        <div key={groupIndex} className="flex flex-col items-center gap-2">
+        <div key={groupIndex} className="flex flex-col items-center gap-1">
           {group.map((condition, conditionIndex) => (
             <WeeklyForecastItem
               key={conditionIndex}

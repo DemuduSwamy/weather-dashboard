@@ -9,7 +9,7 @@ const CurrentWeatherItem = ({ city, date, temperature, description, icon }) => {
       <div className="flex flex-row gap-28">
         <div className="flex flex-col items-center justify-center">
           <p className="font-bold text-[28px] text-heading">{city}</p>
-          <p className="font-bold text-[36px] text-content">{temperature}°C</p>
+          <p className="font-bold text-[30px] text-content">{temperature}°C</p>
         </div>
         <div className="flex  flex-col items-center justify-center">
           <Image
@@ -17,7 +17,6 @@ const CurrentWeatherItem = ({ city, date, temperature, description, icon }) => {
             height={50}
             src={weatherIcon(icon)}
             alt={"title"}
-            style={{ filter: "invert(0%) brightness(0%)" }}
             color="white"
             preview={false}
           />
