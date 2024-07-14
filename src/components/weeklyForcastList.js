@@ -11,7 +11,7 @@ const WeeklyForcastList = ({ weatherData, index }) => {
       { value: forecastDays[index], type: "date" },
       {
         value: (
-          <div className="flex items-center  gap-2">
+          <div className="flex items-center justify-center gap-2">
             <Image
               width={32}
               src={weatherIcon(weatherData.icon)}
@@ -37,7 +37,7 @@ const WeeklyForcastList = ({ weatherData, index }) => {
   ];
 
   return (
-    <div className="flex justify-between items-center shadow-xl rounded-lg bg-white p-3 gap-24">
+    <div className="flex justify-between items-center shadow-xl rounded-lg bg-white p-2 gap-20">
       {conditions.map((group, groupIndex) => (
         <div key={groupIndex} className="flex flex-col gap-2">
           {group.map((condition, conditionIndex) => (
