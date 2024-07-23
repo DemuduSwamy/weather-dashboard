@@ -9,11 +9,12 @@ import WeeklyForcastList from "./components/weeklyForcastList";
 import { ALL_DESCRIPTIONS } from "./utilities/DateConstants";
 import { transformDateFormat } from "./utilities/DatetimeUtils";
 import SplashIcon from "./assets/splash-icon.svg";
+import GitHubIcon from "./assets/icons/git_hub_avathar.png";
 import {
   getTodayForecastWeather,
   getWeekForecastWeather,
 } from "./utilities/dataUtils";
-import { Image } from "antd";
+import { Avatar, Image } from "antd";
 
 function App() {
   const [todayWeather, setTodayWeather] = useState(null);
@@ -57,21 +58,32 @@ function App() {
     }
   };
 
+  const OnClickAvatar = () => {
+    // window.location.href = "https://github.com/DemuduSwamy/weather-dashboard";
+    window.open("https://github.com/DemuduSwamy/weather-dashboard", "_blank");
+  };
+
   return (
     <div className="bg-gradient-to-b from-[#03264E] to-[#0076A4] flex flex-col w-full h-screen justify-center items-center">
       <div className="bg-gradient-to-l from-[#87CEFA] to-[#E0FFFF] p-5 m-10 shadow-2xl rounded-lg flex flex-col w-fit">
         <div className="flex flex-col gap-1">
-          <div className="flex gap-1">
+          <div className="flex gap-1 items-center">
             <p className="font-bold text-[26px] text-heading border-b-4 border-b-content">
               WEATHER
             </p>
             <p className="font-bold text-[26px] text-content border-b-4 border-b-heading">
               FORCASTING
             </p>
+            <Avatar
+              onClick={OnClickAvatar}
+              size={45}
+              className="ml-auto"
+              src={GitHubIcon}
+            ></Avatar>
           </div>
           <p>Know your weather, plan your day.</p>
         </div>
-        <div className="flex gap-28 pt-3">
+        <div className="flex gap-28 pt-3 flex-col">
           <div className="flex flex-col gap-5">
             <SearchBar onSearchChange={handleSearchChange} />
             {todayWeather ? (
