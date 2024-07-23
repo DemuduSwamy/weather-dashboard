@@ -83,7 +83,7 @@ function App() {
           </div>
           <p>Know your weather, plan your day.</p>
         </div>
-        <div className="flex gap-28 pt-3 flex-col">
+        <div className="flex gap-28 pt-3">
           <div className="flex flex-col gap-5">
             <SearchBar onSearchChange={handleSearchChange} />
             {todayWeather ? (
